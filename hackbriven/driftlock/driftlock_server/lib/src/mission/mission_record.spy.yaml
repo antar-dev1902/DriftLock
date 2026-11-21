@@ -1,0 +1,12 @@
+class: MissionRecord
+table: driftlock_mission
+serverOnly: true
+fields:
+  ownerIdentifier: String
+  sessionId: String
+  startedAtUtc: DateTime
+  summary: MissionSummary
+indexes:
+  driftlock_mission_owner_session:
+    fields: ownerIdentifier, sessionId
+    unique: true

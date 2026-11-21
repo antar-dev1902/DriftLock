@@ -1,0 +1,11 @@
+class: MissionSummary
+fields:
+  schema: String
+  sessionId: String, jsonKey=session_id
+  source: String
+  startedAtUtc: DateTime, jsonKey=started_at_utc
+  durationMs: int, jsonKey=duration_ms
+  engineVersion: String, jsonKey=engine_version
+  modelVersion: String?, jsonKey=model_version
+  benchmarkId: String?, jsonKey=benchmark_id
+  consentToUpload: bool, jsonKey=consent_to_upload

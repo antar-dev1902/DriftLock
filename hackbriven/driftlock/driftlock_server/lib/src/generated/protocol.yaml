@@ -1,0 +1,27 @@
+emailIdp:
+  - startOtpLogin:
+  - verifyOtpLoginCode:
+  - finishOtpLogin:
+  - finishOtpRegistration:
+  - login:
+  - startRegistration:
+  - verifyRegistrationCode:
+  - finishRegistration:
+  - startPasswordReset:
+  - verifyPasswordResetCode:
+  - finishPasswordReset:
+  - hasAccount:
+jwtRefresh:
+  - refreshAccessToken:
+debrief:
+  - replay:
+greeting:
+  - hello:
+mission:
+  - saveMission:
+  - listMissions:
+  - getMission:
+voice:
+  - isConfigured:
+  - speakStatus:
+  - askByVoice:

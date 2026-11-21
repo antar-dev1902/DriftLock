@@ -1,0 +1,3 @@
+exception: MissionRejected
+fields:
+  message: String

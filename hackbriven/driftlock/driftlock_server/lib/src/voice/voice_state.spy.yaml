@@ -1,0 +1,8 @@
+class: VoiceState
+fields:
+  schema: String
+  sessionId: String, jsonKey=session_id
+  tMs: int, jsonKey=t_ms
+  outageState: String, jsonKey=outage_state
+  radius95M: double?, jsonKey=radius_95_m
+  calibrated: bool

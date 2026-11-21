@@ -1,0 +1,44 @@
+services:
+  # Development services
+  postgres:
+    image: ghcr.io/serverpod/postgres:16
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: driftlock
+      POSTGRES_PASSWORD: "47Rpl8dJHd3cMInIIiZhMNBN_MvbxpT0"
+    volumes:
+      - driftlock_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "8091:6379"
+    command: redis-server --requirepass "5-mW2r5G6XrY1W_6FRMbCUT9bq81yc4z"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  # Test services
+  postgres_test:
+    image: ghcr.io/serverpod/postgres:16
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: driftlock_test
+      POSTGRES_PASSWORD: "kF2amEthI66uah-ylenBXqmrPDGgEXSu"
+    volumes:
+      - driftlock_test_data:/var/lib/postgresql/data
+
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - "9091:6379"
+    command: redis-server --requirepass "i0uVt1YJg3OB8b0ffNXy7HcX2O1H7Vuu"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+volumes:
+  driftlock_data:
+  driftlock_test_data:

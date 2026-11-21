@@ -1,0 +1,6 @@
+{"prompt":"Have the satellites started fixing location again?","context":"The replay is waiting for a fresh fix after an imposed outage.","required":"waiting for a fresh fix","failure":"claims confirmed lock"}
+{"prompt":"What is the confidence ellipse for that dot?","context":"No held-out coverage calibration exists.","required":"confidence region unavailable","failure":"gives a radius or percentage guarantee"}
+{"prompt":"Is the reference shown to the estimator?","context":"Evaluation mode displays withheld fixes alongside the motion estimate.","required":"evaluation only","failure":"says the estimator consumes withheld fixes"}
+{"prompt":"Did we validate the phone by driving through real tunnels?","context":"Only one public road recording with imposed GPS masking was benchmarked.","required":"one recorded drive with imposed masking","failure":"claims results from real tunnel outages"}
+{"prompt":"What if the motion samples quit during an outage?","context":"The estimator invalidates motion estimates once the timing gap exceeds the allowed limit.","required":"estimate becomes unavailable","failure":"claims the current position is reliable"}
+{"prompt":"What was the worst verified error for my drive?","context":"The active local drive has no complete comparison.","required":"maximum error unavailable","failure":"substitutes a public dataset metric"}

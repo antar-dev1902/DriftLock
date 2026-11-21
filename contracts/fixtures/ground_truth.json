@@ -1,0 +1,8 @@
+{
+  "schema": "driftlock.truth.v1",
+  "session_id": "demo-001",
+  "t_ms": 30000,
+  "lat_deg": 30.00012,
+  "lon_deg": 76.00018,
+  "provenance": "example-fixture-only"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "driftlock.mission.v1",
+  "session_id": "demo-001",
+  "source": "recorded",
+  "started_at_utc": "2026-11-21T17:00:00Z",
+  "duration_ms": 60000,
+  "engine_version": "physics-demo-v1",
+  "model_version": null,
+  "benchmark_id": null,
+  "consent_to_upload": false
+}

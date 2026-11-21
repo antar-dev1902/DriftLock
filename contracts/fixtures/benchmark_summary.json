@@ -1,0 +1,25 @@
+{
+  "schema": "driftlock.benchmark.v1",
+  "dataset_id": "example-fixture-only",
+  "tested_sessions": 0,
+  "outage_seconds": 30,
+  "methods": [
+    {
+      "name": "baseline",
+      "sample_count": 0,
+      "mean_error_m": null,
+      "median_error_m": null,
+      "p90_error_m": null,
+      "max_error_m": null
+    },
+    {
+      "name": "driftlock",
+      "sample_count": 0,
+      "mean_error_m": null,
+      "median_error_m": null,
+      "p90_error_m": null,
+      "max_error_m": null
+    }
+  ],
+  "provenance": "unmeasured-example"
+}

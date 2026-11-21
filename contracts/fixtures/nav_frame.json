@@ -1,0 +1,28 @@
+{
+  "schema": "driftlock.nav.v1",
+  "session_id": "demo-001",
+  "t_ms": 30000,
+  "source": "recorded",
+  "outage_state": "blackout",
+  "predicted": {
+    "lat_deg": 30.000125,
+    "lon_deg": 76.000175
+  },
+  "motion": {
+    "speed_mps": 8.4,
+    "heading_deg": 84.2
+  },
+  "uncertainty": {
+    "radius_95_m": null,
+    "calibrated": false
+  },
+  "road_match": {
+    "status": "unavailable",
+    "lat_deg": null,
+    "lon_deg": null
+  },
+  "versions": {
+    "engine": "physics-demo-v1",
+    "ml_model": null
+  }
+}

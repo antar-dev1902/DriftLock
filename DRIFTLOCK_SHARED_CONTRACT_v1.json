@@ -1,0 +1,159 @@
+{
+  "contract_id": "DRIFTLOCK-IFACE-1.0",
+  "released_at_ist": "2026-11-22",
+  "status": "freeze for hackathon; changes require all-four ACK",
+  "time_base": "t_ms: integer milliseconds since recording start; monotonic; never wall-clock for filtering",
+  "geo": "WGS84 latitude/longitude in decimal degrees; heading_deg clockwise from true north, [0,360)",
+  "units": "meters, seconds, m/s, m/s^2, rad/s; all unavailable values are null, never zero placeholders",
+  "data_classes": {
+    "SensorSample": {
+      "required": [
+        "schema",
+        "session_id",
+        "t_ms",
+        "source",
+        "imu",
+        "gnss"
+      ],
+      "schema_value": "driftlock.sensor.v1",
+      "source_enum": [
+        "recorded",
+        "simulated",
+        "live"
+      ],
+      "imu_fields": [
+        "ax_mps2",
+        "ay_mps2",
+        "az_mps2",
+        "gx_radps",
+        "gy_radps",
+        "gz_radps"
+      ],
+      "imu_frame": "device frame; source axis conventions must be documented per capture device",
+      "gnss_fields": [
+        "available",
+        "lat_deg",
+        "lon_deg",
+        "speed_mps",
+        "horizontal_accuracy_m"
+      ],
+      "rule": "If GNSS unavailable, GNSS location/speed/accuracy MUST be null. Never include ground truth."
+    },
+    "NavFrame": {
+      "required": [
+        "schema",
+        "session_id",
+        "t_ms",
+        "source",
+        "outage_state",
+        "predicted",
+        "motion",
+        "uncertainty",
+        "road_match",
+        "versions"
+      ],
+      "schema_value": "driftlock.nav.v1",
+      "outage_state_enum": [
+        "locked",
+        "blackout",
+        "reacquiring"
+      ],
+      "predicted_fields": [
+        "lat_deg",
+        "lon_deg"
+      ],
+      "motion_fields": [
+        "speed_mps",
+        "heading_deg"
+      ],
+      "uncertainty_fields": [
+        "radius_95_m",
+        "calibrated"
+      ],
+      "road_match_fields": [
+        "status",
+        "lat_deg",
+        "lon_deg"
+      ],
+      "road_match_status_enum": [
+        "unavailable",
+        "ambiguous",
+        "matched"
+      ],
+      "versions_fields": [
+        "engine",
+        "ml_model"
+      ],
+      "rule": "Uncertainty radius stays null until coverage calibration is demonstrated; never embed ground truth."
+    },
+    "GroundTruth": {
+      "required": [
+        "schema",
+        "session_id",
+        "t_ms",
+        "lat_deg",
+        "lon_deg",
+        "provenance"
+      ],
+      "schema_value": "driftlock.truth.v1",
+      "rule": "Separate evaluation-only file keyed by (session_id,t_ms). NEVER pass to estimator during blackout."
+    },
+    "BenchmarkSummary": {
+      "required": [
+        "schema",
+        "dataset_id",
+        "tested_sessions",
+        "outage_seconds",
+        "methods",
+        "provenance"
+      ],
+      "schema_value": "driftlock.benchmark.v1",
+      "method_fields": [
+        "name",
+        "sample_count",
+        "mean_error_m",
+        "median_error_m",
+        "p90_error_m",
+        "max_error_m"
+      ],
+      "rule": "Store null for unmeasured metrics; source tag must distinguish actual recorded, synthetic and historical."
+    },
+    "MissionSummary": {
+      "required": [
+        "schema",
+        "session_id",
+        "source",
+        "started_at_utc",
+        "duration_ms",
+        "engine_version",
+        "model_version",
+        "benchmark_id",
+        "consent_to_upload"
+      ],
+      "schema_value": "driftlock.mission.v1",
+      "rule": "Cloud mission metadata is optional. Core offline navigation MUST NOT wait on the backend."
+    },
+    "VoiceState": {
+      "required": [
+        "schema",
+        "session_id",
+        "t_ms",
+        "outage_state",
+        "radius_95_m",
+        "calibrated"
+      ],
+      "schema_value": "driftlock.voice_state.v1",
+      "rule": "Share status by default, NOT precise location. Voice never asserts precision absent calibration."
+    }
+  },
+  "data_locations": {
+    "sensors": "contracts/fixtures/sensor_sample.json",
+    "nav": "contracts/fixtures/nav_frame.json",
+    "truth": "contracts/fixtures/ground_truth.json",
+    "benchmark": "contracts/fixtures/benchmark_summary.json",
+    "mission": "contracts/fixtures/mission_summary.json",
+    "voice": "contracts/fixtures/voice_state.json"
+  },
+  "change_protocol": "Issue CONTRACT-CHANGE with before/after fixture and all four owner ACKs; no silent field rename.",
+  "sha256_without_sha256_field": "5925705e5f7b85f96713b8538b793376f21997882bd7f4cc25096d4fe5ceb5b1"
+}

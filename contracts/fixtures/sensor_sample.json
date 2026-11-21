@@ -1,0 +1,21 @@
+{
+  "schema": "driftlock.sensor.v1",
+  "session_id": "demo-001",
+  "t_ms": 30000,
+  "source": "recorded",
+  "imu": {
+    "ax_mps2": 0.08,
+    "ay_mps2": -0.03,
+    "az_mps2": 9.79,
+    "gx_radps": 0.0,
+    "gy_radps": 0.002,
+    "gz_radps": 0.014
+  },
+  "gnss": {
+    "available": false,
+    "lat_deg": null,
+    "lon_deg": null,
+    "speed_mps": null,
+    "horizontal_accuracy_m": null
+  }
+}

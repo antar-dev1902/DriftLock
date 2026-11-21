@@ -1,0 +1,127 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		D11000000000000000000001 = {isa = PBXProject; attributes = {LastSwiftUpdateCheck = 1600; LastUpgradeCheck = 1600;}; buildConfigurationList = D11000000000000000000040; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = D11000000000000000000010; productRefGroup = D11000000000000000000014; projectDirPath = ""; projectRoot = ""; targets = (D11000000000000000000002);};
+		D11000000000000000000002 = {isa = PBXNativeTarget; buildConfigurationList = D11000000000000000000041; buildPhases = (D11000000000000000000003, D11000000000000000000004, D11000000000000000000005); buildRules = (); dependencies = (); name = DRIFTLOCK; productName = DRIFTLOCK; productReference = D11000000000000000000029; productType = "com.apple.product-type.application";};
+		D11000000000000000000003 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (D11000000000000000000031, D11000000000000000000032, D11000000000000000000033, D11000000000000000000034, D11000000000000000000035, D11000000000000000000036, D11000000000000000000039, D1100000000000000000003A); runOnlyForDeploymentPostprocessing = 0;};
+		D11000000000000000000004 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+		D11000000000000000000005 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (D11000000000000000000037, D11000000000000000000038); runOnlyForDeploymentPostprocessing = 0;};
+
+		D11000000000000000000010 = {isa = PBXGroup; children = (D11000000000000000000011, D11000000000000000000012, D11000000000000000000014); sourceTree = "<group>";};
+		D11000000000000000000011 = {isa = PBXGroup; path = App; children = (D11000000000000000000021, D11000000000000000000022, D11000000000000000000023, D11000000000000000000024, D1100000000000000000002B, D11000000000000000000013); sourceTree = "<group>";};
+		D11000000000000000000012 = {isa = PBXGroup; path = DriftCore; children = (D11000000000000000000025, D11000000000000000000026, D1100000000000000000002A); sourceTree = "<group>";};
+		D11000000000000000000013 = {isa = PBXGroup; path = Resources; children = (D11000000000000000000027, D11000000000000000000028); sourceTree = "<group>";};
+		D11000000000000000000014 = {isa = PBXGroup; name = Products; children = (D11000000000000000000029); sourceTree = "<group>";};
+
+		D11000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriftlockApp.swift; sourceTree = "<group>";};
+		D11000000000000000000022 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayScreen.swift; sourceTree = "<group>";};
+		D11000000000000000000023 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlot.swift; sourceTree = "<group>";};
+		D11000000000000000000024 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureScreen.swift; sourceTree = "<group>";};
+		D11000000000000000000025 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedDrive.swift; sourceTree = "<group>";};
+		D11000000000000000000026 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutageReplay.swift; sourceTree = "<group>";};
+		D11000000000000000000027 = {isa = PBXFileReference; lastKnownFileType = text.json; path = AustinReplay.json; sourceTree = "<group>";};
+		D11000000000000000000028 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>";};
+		D11000000000000000000029 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DRIFTLOCK.app; sourceTree = BUILT_PRODUCTS_DIR;};
+		D1100000000000000000002A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedDrive.swift; sourceTree = "<group>";};
+
+		D1100000000000000000002B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriftStyle.swift; sourceTree = "<group>";};
+
+		D11000000000000000000031 = {isa = PBXBuildFile; fileRef = D11000000000000000000021;};
+		D11000000000000000000032 = {isa = PBXBuildFile; fileRef = D11000000000000000000022;};
+		D11000000000000000000033 = {isa = PBXBuildFile; fileRef = D11000000000000000000023;};
+		D11000000000000000000034 = {isa = PBXBuildFile; fileRef = D11000000000000000000024;};
+		D11000000000000000000035 = {isa = PBXBuildFile; fileRef = D11000000000000000000025;};
+		D11000000000000000000036 = {isa = PBXBuildFile; fileRef = D11000000000000000000026;};
+		D11000000000000000000037 = {isa = PBXBuildFile; fileRef = D11000000000000000000027;};
+		D11000000000000000000038 = {isa = PBXBuildFile; fileRef = D11000000000000000000028;};
+		D11000000000000000000039 = {isa = PBXBuildFile; fileRef = D1100000000000000000002A;};
+
+		D1100000000000000000003A = {isa = PBXBuildFile; fileRef = D1100000000000000000002B;};
+
+		D11000000000000000000040 = {isa = XCConfigurationList; buildConfigurations = (D11000000000000000000050, D11000000000000000000051); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+		D11000000000000000000041 = {isa = XCConfigurationList; buildConfigurations = (D11000000000000000000052, D11000000000000000000053); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+		D11000000000000000000050 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				SDKROOT = auto;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+		};
+		D11000000000000000000051 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				SDKROOT = auto;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+		};
+		D11000000000000000000052 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DRIFTLOCK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Driftlock records location and speed while you capture a drive.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Driftlock records accelerometer and gyroscope samples while you capture a drive.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.driftlock.ios;
+				PRODUCT_NAME = DRIFTLOCK;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+		};
+		D11000000000000000000053 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DRIFTLOCK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Driftlock records location and speed while you capture a drive.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Driftlock records accelerometer and gyroscope samples while you capture a drive.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.driftlock.ios;
+				PRODUCT_NAME = DRIFTLOCK;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+		};
+	};
+	rootObject = D11000000000000000000001;
+}

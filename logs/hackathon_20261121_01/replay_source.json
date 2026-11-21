@@ -1,0 +1,78 @@
+{
+  "contract": "driftlock-ios-replay-v1",
+  "dataset_revision": "12ae2e804dcfbbf76b389f8af8ce726f0cb6a2e5",
+  "source_url": "https://github.com/cloudpose/smartphone_driving_dataset/tree/12ae2e804dcfbbf76b389f8af8ce726f0cb6a2e5",
+  "originals": {
+    "README.md": {
+      "bytes": 2500,
+      "sha256": "d95e2d7127dd02e3c7d56810a39dca37a9e606d218926e7f5adb270692763f55"
+    },
+    "dataset1_phone.csv": {
+      "bytes": 2869504,
+      "sha256": "76a5f2ffd5ff8bec611efb6fe177547f6b172899573a091382db172364e0ad3b"
+    },
+    "dataset1_car.csv": {
+      "bytes": 487400,
+      "sha256": "ee6cb0de742c17a568ad12871229fd0364f3095cdb531fc739de3711521fe1ca"
+    }
+  },
+  "observed": {
+    "local_clock": "America/Chicago",
+    "reference_location_epoch": "Unix seconds converted to relative logger time",
+    "motion_availability_clock": "observed logger row time, relative to first row",
+    "clock_origin_unix_s": 1523201497.097,
+    "max_elapsed_motion_vs_logger_deviation_s": 0.020974105776986107,
+    "max_motion_receipt_gap_s": 0.12400000000002365,
+    "median_location_age_at_first_observation_s": 0.20190999999999804,
+    "max_location_age_at_first_observation_s": 1.097808,
+    "phone_motion_rows": 3419,
+    "unique_location_fixes": 343
+  },
+  "offline_speed_cross_check": {
+    "vehicle_speed_rows": 4708,
+    "nearest_pair_max_skew_s": 0.16,
+    "accepted_pairs": 342,
+    "median_absolute_speed_disagreement_mps": 0.5090881799999991,
+    "mean_absolute_speed_disagreement_mps": 0.8925691798830409,
+    "scope": "Offline clock/speed cross-check only. Neither estimator nor app bundle receives vehicle rows."
+  },
+  "preset_trials": [
+    {
+      "id": "01",
+      "start": 0,
+      "cut": 20,
+      "restore": 50,
+      "end": 60
+    },
+    {
+      "id": "02",
+      "start": 70,
+      "cut": 90,
+      "restore": 120,
+      "end": 130
+    },
+    {
+      "id": "03",
+      "start": 140,
+      "cut": 160,
+      "restore": 190,
+      "end": 200
+    },
+    {
+      "id": "04",
+      "start": 210,
+      "cut": 230,
+      "restore": 260,
+      "end": 270
+    },
+    {
+      "id": "05",
+      "start": 280,
+      "cut": 300,
+      "restore": 330,
+      "end": 340
+    }
+  ],
+  "replay_sha256": "49629bf66ea8e1688a209fd515624d5cadf0d6305727161a080d72848e8e55bd",
+  "review_status": "ENGINEERING_REPLAY_ONLY"
+}

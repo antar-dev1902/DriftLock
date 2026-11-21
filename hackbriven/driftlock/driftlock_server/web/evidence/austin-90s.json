@@ -1,0 +1,33 @@
+{
+  "dataset_id": "cloudpose-austin-dataset1",
+  "methods": [
+    {
+      "max_error_m": 908.7104816002154,
+      "mean_error_m": 383.96250609806174,
+      "median_error_m": 361.0983402194398,
+      "name": "DriftLock",
+      "p90_error_m": 786.771677134599,
+      "sample_count": 90
+    },
+    {
+      "max_error_m": 1268.3230225137252,
+      "mean_error_m": 580.1013628352692,
+      "median_error_m": 554.8798683616848,
+      "name": "Constant speed / heading",
+      "p90_error_m": 1114.423764205177,
+      "sample_count": 90
+    },
+    {
+      "max_error_m": 404.94021202970197,
+      "mean_error_m": 240.21554725033872,
+      "median_error_m": 232.61034309513224,
+      "name": "Last known position",
+      "p90_error_m": 399.5264172756665,
+      "sample_count": 90
+    }
+  ],
+  "outage_seconds": 90,
+  "provenance": "Recorded phone motion and withheld phone GNSS. Imposed blackout. https://github.com/cloudpose/smartphone_driving_dataset/tree/12ae2e804dcfbbf76b389f8af8ce726f0cb6a2e5",
+  "schema": "driftlock.benchmark.v1",
+  "tested_sessions": 1
+}

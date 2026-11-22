@@ -4,6 +4,12 @@ Open [DRIFTLOCK.xcodeproj](DRIFTLOCK.xcodeproj) in Xcode and select the **DRIFTL
 
 The [Mac demo](../output/hackathon_20261121/DRIFTLOCK.app) runs the same SwiftUI replay and estimator on Apple silicon.
 
+## macOS mountain presentation
+
+Launch **Presentation** in the macOS target. Press **Play** to follow the SUV into the pass. The simulation pauses at the landslide until you select **Reroute via ridge road** or **Reroute via valley road**. The SUV continues from the same junction and follows the selected road through GPS recovery. Open **Navigation Preview** and select **Start drive** to replay the same trip from its starting point on a top-down map. The map follows the vehicle, flags the GPS outage, and stops at the landslide. Select either saved detour to continue to the pass exit, then open **Test Lab** for the recorded benchmark and virtual-odometer evidence. **Replay** retains the recorded-window controls.
+
+The SceneKit terrain and bundled route choices are illustrative. The car follows authored paths, and the uncertainty ring is qualitative. The Test Lab computes the recorded benchmark from Austin data. The exploratory odometer checkpoint stays disabled for navigation. The modern interface uses SwiftUI Liquid Glass on macOS 26 or later and standard material on earlier supported systems.
+
 ## 60-second demo
 
 1. Open **Replay**. The screen starts on the first chronological window of an Austin drive recorded on an iPhone X.

@@ -15,10 +15,18 @@ struct DriftMark: View {
 }
 
 enum DriftPage: String, CaseIterable {
+    #if os(macOS)
+    case presentation = "Presentation", navigationPreview = "Navigation Preview", lab = "Test Lab"
+    #endif
     case replay = "Replay", capture = "Capture"
 
     var symbol: String {
         switch self {
+        #if os(macOS)
+        case .presentation: "mountain.2"
+        case .navigationPreview: "map"
+        case .lab: "chart.xyaxis.line"
+        #endif
         case .replay: "point.topleft.down.to.point.bottomright.curvepath"
         case .capture: "waveform"
         }
@@ -30,17 +38,26 @@ struct DriftlockApp: App {
     var body: some Scene {
         WindowGroup {
             DriftlockRoot()
+            #if os(macOS)
+                .preferredColorScheme(.light)
+                .frame(minWidth: 840, minHeight: 590)
+            #else
                 .preferredColorScheme(.dark)
+            #endif
         }
         #if os(macOS)
-        .defaultSize(width: 530, height: 900)
+        .defaultSize(width: 1210, height: 770)
         #endif
     }
 }
 
 @MainActor
 private final class DriftRootState: ObservableObject {
+    #if os(macOS)
+    @Published var page = DriftPage.presentation
+    #else
     @Published var page = DriftPage.replay
+    #endif
     @Published var evidence = false
     @Published var captureError: String?
     @Published private(set) var loadingCapture = false
@@ -86,6 +103,14 @@ private struct DriftlockRoot: View {
         VStack(spacing: 0) {
             header
             switch state.page {
+            #if os(macOS)
+            case .presentation:
+                MountainPresentation { state.page = .navigationPreview }
+            case .navigationPreview:
+                NavigationPreview { state.page = .lab }
+            case .lab:
+                DriftTestLab(drive: try? state.recording.get()) { state.page = .replay }
+            #endif
             case .replay:
                 switch state.recording {
                 case .success(let drive):
@@ -118,7 +143,30 @@ private struct DriftlockRoot: View {
         }
     }
 
-    private var header: some View {
+    @ViewBuilder private var header: some View {
+        #if os(macOS)
+        HStack(spacing: 14) {
+            DriftMark()
+            Text("DRIFTLOCK").font(.system(size: 15, weight: .black)).tracking(2.3)
+            Spacer()
+            ForEach(DriftPage.allCases.filter { $0 != .capture }, id: \.self) { item in
+                Button {
+                    state.page = item
+                } label: {
+                    Label(item.rawValue, systemImage: item.symbol)
+                        .font(.subheadline.weight(state.page == item ? .bold : .medium))
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(state.page == item ? DriftStyle.ink : DriftStyle.muted)
+                .padding(.vertical, 8).padding(.horizontal, 10)
+                .background(state.page == item ? DriftStyle.raised : .clear, in: Capsule())
+                .accessibilityAddTraits(state.page == item ? [.isSelected] : [])
+            }
+        }
+        .padding(.horizontal, 22).padding(.vertical, 11)
+        .background(DriftStyle.background)
+        Divider()
+        #else
         VStack(spacing: 15) {
             HStack(spacing: 10) {
                 DriftMark()
@@ -169,5 +217,6 @@ private struct DriftlockRoot: View {
         .padding(.top, 12)
         .padding(.bottom, 16)
         .frame(maxWidth: 940)
+        #endif
     }
 }
